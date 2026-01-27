@@ -2,6 +2,7 @@ import {useRef, useState} from "react";
 
 export const Stopwatch = () => {
     let [time, setTime] = useState(0)
+    let [isRunning, setIsRunning] = useState(false)
 
     let intervalId = useRef<undefined | number>(undefined)
 
@@ -12,15 +13,20 @@ export const Stopwatch = () => {
 
 
     const onStartHandler = () => {
+        if (intervalId.current !== undefined) return
+
         intervalId.current = setInterval(() => {
             setTime(prevState => prevState + 1)
         }, 1000)
+
+        setIsRunning(true)
     }
 
     const onPauseHandler = () => {
-        if (intervalId) {
+        if (intervalId.current !== undefined) {
             clearInterval(intervalId.current)
             intervalId.current = undefined
+            setIsRunning(false)
         }
     }
 
@@ -52,7 +58,7 @@ export const Stopwatch = () => {
             </div>
 
             <div className={'flex gap-10'}>
-                {intervalId.current !== undefined ?
+                {isRunning ?
                     <button onClick={onPauseHandler}>pause</button>
                     : <button onClick={onStartHandler}>start</button>}
 
