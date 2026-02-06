@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+    /*--color-midnight: #0F172AE6;*/
+}
+
 body {
-    @apply bg-blue-200 max-w-305 mx-auto my-0
+    @apply bg-black mx-auto my-0 text-white
 }
