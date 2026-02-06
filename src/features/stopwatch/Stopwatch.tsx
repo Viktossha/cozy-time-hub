@@ -9,7 +9,7 @@ export const Stopwatch = () => {
     let seconds = time % 60
     let minutes = Math.floor(time / 60) % 60
     let hours = Math.floor(time / 3600) % 24
-    let days =  Math.floor(time / 86400)
+    let days = Math.floor(time / 86400)
 
 
     const onStartHandler = () => {
@@ -37,33 +37,39 @@ export const Stopwatch = () => {
 
 
     return (
-        <div className={'border bg-blue-300 rounded-md mt-15 flex flex-col items-center p-4'}>
-            <div className={'flex gap-10'}>
-                <div>
-                    <div className={'bg-blue-500 border rounded-md text-center'}>{days}</div>
-                    <span>days</span>
+        <div
+            className={'border  bg-linear-to-r from-cyan-500/20 via-violet-500/10 to-cyan-500/20 rounded-md mt-15 flex flex-col items-center p-4'}>
+            {/*<div*/}
+            {/*    className={' bg-white/3 backdrop-blur-2xl rounded-2xl border border-white/10'}>*/}
+                <h3>Секундомер</h3>
+                <div className={'flex gap-10'}>
+                    <div>
+                        <div className={'bg-white/5 backdrop-blur-md border rounded-md text-center'}>{days}</div>
+                        <span>days</span>
+                    </div>
+                    <div>
+                        <div className={'bg-white/5 backdrop-blur-md  border rounded-md text-center'}>{hours}</div>
+                        <span>hours</span>
+                    </div>
+                    <div>
+                        <div className={'bg-white/5 backdrop-blur-md  border rounded-md text-center'}>{minutes}</div>
+                        <span>minutes</span>
+                    </div>
+                    <div>
+                        <div className={'bg-white/5 backdrop-blur-md  border rounded-md text-center'}>{seconds}</div>
+                        <span>seconds</span>
+                    </div>
                 </div>
-                <div>
-                    <div className={'bg-blue-500 border rounded-md text-center'}>{hours}</div>
-                    <span>hours</span>
-                </div>
-                <div>
-                    <div className={'bg-blue-500 border rounded-md text-center'}>{minutes}</div>
-                    <span>minutes</span>
-                </div>
-                <div>
-                    <div className={'bg-blue-500 border rounded-md text-center'}>{seconds}</div>
-                    <span>seconds</span>
-                </div>
-            </div>
 
-            <div className={'flex gap-10'}>
-                {isRunning ?
-                    <button onClick={onPauseHandler}>pause</button>
-                    : <button onClick={onStartHandler}>start</button>}
+                <div className={'flex gap-10'}>
+                    {isRunning ?
+                        <button onClick={onPauseHandler}>pause</button>
+                        : <button onClick={onStartHandler}>start</button>}
 
-                {time !== 0 && <button onClick={onResetHandler}>reset</button>}
-            </div>
+                    {time !== 0 && <button onClick={onResetHandler}>reset</button>}
+                </div>
+            {/*</div>*/}
+
         </div>
     )
 };
