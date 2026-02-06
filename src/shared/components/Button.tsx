@@ -1,10 +1,7 @@
-import type {ComponentPropsWithoutRef, ReactNode} from "react";
+import type {ComponentPropsWithoutRef} from "react";
 import {cn} from "../lib/cn.ts";
 
-type Props = {
-    children: ReactNode
-    className?: string
-} & ComponentPropsWithoutRef<'button'>
+type Props = ComponentPropsWithoutRef<'button'>
 
 export const Button = ({className, children, ...rest}: Props) => {
     return (

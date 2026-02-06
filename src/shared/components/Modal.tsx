@@ -1,5 +1,4 @@
 import * as Dialog from '@radix-ui/react-dialog';
-import type {ReactNode} from "react";
 import type {DialogProps} from '@radix-ui/react-dialog';
 import {Button} from "./Button.tsx";
 
@@ -7,7 +6,6 @@ type Props = {
     title?: string
     description?: string
     closeText?: string
-    children: ReactNode
 } & DialogProps
 export const Modal = ({open, onOpenChange, title, description, closeText, children, ...dialogProps}: Props) => {
     return (
