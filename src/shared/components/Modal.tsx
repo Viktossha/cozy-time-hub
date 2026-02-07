@@ -1,7 +1,7 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import type {DialogProps} from '@radix-ui/react-dialog';
-import {Button} from "./Button.tsx";
-import {cn} from "../lib/cn.ts";
+import {cn} from "@/shared/lib/cn.ts";
+import {Button} from "@/shared/components/Button.tsx";
 
 type Props = {
     title?: string

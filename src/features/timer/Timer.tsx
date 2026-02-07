@@ -1,8 +1,8 @@
 import {useState} from "react";
-import {Modal} from "../../shared/components/Modal.tsx";
-import {Button} from "../../shared/components/Button.tsx";
-import {Input} from "../../shared/components/Input.tsx";
-import {cn} from "../../shared/lib/cn.ts";
+import {cn} from "@/shared/lib/cn.ts";
+import {Button} from "@/shared/components/Button.tsx";
+import {Modal} from "@/shared/components/Modal.tsx";
+import {Input} from "@/shared/components/Input.tsx";
 
 export const Timer = () => {
     const [showSettings, setShowSettings] = useState(false)

@@ -1,5 +1,5 @@
-import {cn} from "../lib/cn.ts";
 import type {ChangeEvent, ComponentPropsWithRef} from "react";
+import {cn} from "@/shared/lib/cn.ts";
 
 type Props = {
     label?: string
