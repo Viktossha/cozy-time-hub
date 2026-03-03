@@ -8,8 +8,9 @@ type Props = {
     description?: string
     closeText?: string
     className?: string
+    onCloseTextButton?: () => void
 } & DialogProps
-export const Modal = ({open, onOpenChange, title, description, closeText, children, className, ...dialogProps}: Props) => {
+export const Modal = ({open, onOpenChange, onCloseTextButton, title, description, closeText, children, className, ...dialogProps}: Props) => {
     return (
         <Dialog.Root open={open} onOpenChange={onOpenChange} {...dialogProps}>
             <Dialog.Portal>
@@ -31,7 +32,7 @@ export const Modal = ({open, onOpenChange, title, description, closeText, childr
                     {closeText &&
                         <Dialog.Close asChild
                                       className="mx-auto block mt-10 hover:bg-violet4 cursor-pointer focus:shadow-[0_0_0_2px] focus:shadow-violet7 focus:outline-none">
-                            <Button className={'px-10'}>{closeText}</Button>
+                            <Button className={'px-10'} onClick={onCloseTextButton}>{closeText}</Button>
                         </Dialog.Close>}
                 </Dialog.Content>
             </Dialog.Portal>
