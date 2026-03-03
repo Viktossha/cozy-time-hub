@@ -34,6 +34,7 @@ export const Stopwatch = () => {
 
     const onResetHandler = () => {
         clearInterval(intervalId.current)
+        intervalId.current = undefined
         setTime(0)
     }
 
