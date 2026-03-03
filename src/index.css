@@ -5,5 +5,5 @@
 }
 
 body {
-    @apply bg-black mx-auto my-0 text-white
+    @apply bg-black mx-auto my-0 text-white overflow-hidden
 }
